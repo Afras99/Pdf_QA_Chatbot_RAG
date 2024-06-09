@@ -1,0 +1,64 @@
+FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+Features:
+Fast: FastAPI is very fast, on par with Node.js and Go (thanks to Starlette and Pydantic).
+FastAPI uses ASGI for high performance.
+Fast to code: with automatic type checking and IDE support, FastAPI is much faster to code than other Python frameworks.
+Easy to learn: FastAPI is easy to learn, even for beginners.
+Easy to use: FastAPI is very easy to use, with a small API surface and many features.
+Installation:
+
+To install FastAPI, you can use pip:
+
+pip install fastapi
+
+
+Usage:
+To create a FastAPI app, you can use the following code:
+
+
+from fastapi import FastAPI
+
+app = FastAPI()
+Then, you can define your endpoints:
+Python
+
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+Finally, you can run your app:
+
+uvicorn main:app --reload
+
+
+Example:
+Here is an example of a FastAPI app:
+
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int):
+    return {"item_id": item_id}
+
+
+This app defines two endpoints:
+/: This endpoint returns a simple message.
+/items/{item_id}: This endpoint returns an item with the specified ID.
+You can run this app with the following command:
+
+uvicorn main:app --reload
+
+Then, you can access the endpoints with the following URLs:
+http://localhost:8000 and http://localhost:8000/items/1.
+
+Conclusion:
+FastAPI is a modern, fast, and easy-to-use web framework for building APIs with Python. It is a great choice for beginners and experienced developers alike.
